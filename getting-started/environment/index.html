@@ -1,0 +1,1443 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://scc.sysu.tech/YatCPU-docs/getting-started/environment/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.1">
+    
+    
+      
+        <title>开发环境 - YatCPU 实验文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e8d9bf0c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+<script>
+
+</script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#开发环境" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+<img class="twemoji" alt="🚧" src="https://twemoji.maxcdn.com/2/svg/1f6a7.svg" title=":constrution" /> 本文档还在编写中
+
+          </div>
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="YatCPU 实验文档" class="md-header__button md-logo" aria-label="YatCPU 实验文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            YatCPU 实验文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              开发环境
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent=""  aria-label="夜间模式"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="夜间模式" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent=""  aria-label="白天模式"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="白天模式" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SYSU-SCC/YatCPU-docs/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="YatCPU 实验文档" class="md-nav__button md-logo" aria-label="YatCPU 实验文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    YatCPU 实验文档
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SYSU-SCC/YatCPU-docs/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        前言
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          环境准备
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="环境准备" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          环境准备
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        开始之前
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          开发环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        开发环境
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-配置方法" class="md-nav__link">
+    Docker 配置方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows-配置方法" class="md-nav__link">
+    Windows 配置方法
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows 配置方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#安装-intellij-idea-和-scala-插件" class="md-nav__link">
+    安装 Intellij IDEA 和 Scala 插件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#安装-vivado" class="md-nav__link">
+    安装 Vivado
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#安装-clang-编译器" class="md-nav__link">
+    安装 Clang 编译器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#安装-verilator" class="md-nav__link">
+    安装 Verilator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linuxwsl1-配置方法" class="md-nav__link">
+    Linux/WSL1 配置方法
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux/WSL1 配置方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#安装必要工具" class="md-nav__link">
+    安装必要工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#安装-sbt-包管理器" class="md-nav__link">
+    安装 sbt 包管理器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#安装-vivado_1" class="md-nav__link">
+    安装 Vivado
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#测试-clang-编译器" class="md-nav__link">
+    测试 Clang 编译器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#安装-verilator_1" class="md-nav__link">
+    安装 Verilator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macos-配置指南" class="md-nav__link">
+    macOS 配置指南
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test/" class="md-nav__link">
+        快速测试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulation/" class="md-nav__link">
+        波形仿真
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compliance-test/" class="md-nav__link">
+        配置合规性测试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coremark-benchmark/" class="md-nav__link">
+        配置 CoreMark 测试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../program-device/" class="md-nav__link">
+        烧板验证
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          预备知识
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="预备知识" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          预备知识
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/" class="md-nav__link">
+        简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/arch/" class="md-nav__link">
+        处理器架构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/rv32i/" class="md-nav__link">
+        RV32I 指令集
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/compile-and-link/" class="md-nav__link">
+        编译与链接
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/interrupt-and-exception/" class="md-nav__link">
+        中断和异常
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/bus/" class="md-nav__link">
+        总线
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          实验
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="实验" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          实验
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/" class="md-nav__link">
+        简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab0-basics-of-chisel3/" class="md-nav__link">
+        实验零 Chisel 3 初步
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab1-single-cycle-cpu/" class="md-nav__link">
+        实验一 单周期 CPU
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab2-multi-cycle-cpu/" class="md-nav__link">
+        实验二 多周期 CPU
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab3-pipelined-cpu/" class="md-nav__link">
+        实验三 流水线 CPU
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        参考资料
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          附录
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="附录" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          附录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/" class="md-nav__link">
+        简介
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-配置方法" class="md-nav__link">
+    Docker 配置方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows-配置方法" class="md-nav__link">
+    Windows 配置方法
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows 配置方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#安装-intellij-idea-和-scala-插件" class="md-nav__link">
+    安装 Intellij IDEA 和 Scala 插件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#安装-vivado" class="md-nav__link">
+    安装 Vivado
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#安装-clang-编译器" class="md-nav__link">
+    安装 Clang 编译器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#安装-verilator" class="md-nav__link">
+    安装 Verilator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linuxwsl1-配置方法" class="md-nav__link">
+    Linux/WSL1 配置方法
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux/WSL1 配置方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#安装必要工具" class="md-nav__link">
+    安装必要工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#安装-sbt-包管理器" class="md-nav__link">
+    安装 sbt 包管理器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#安装-vivado_1" class="md-nav__link">
+    安装 Vivado
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#测试-clang-编译器" class="md-nav__link">
+    测试 Clang 编译器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#安装-verilator_1" class="md-nav__link">
+    安装 Verilator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macos-配置指南" class="md-nav__link">
+    macOS 配置指南
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+  
+                
+<a href="https://github.com/SYSU-SCC/YatCPU-docs/edit/master/docs/getting-started/environment.md" title="编辑此页" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+
+<h1 id="开发环境">开发环境<a class="headerlink" href="#开发环境" title="Permanent link">&para;</a></h1>
+<p>By: <a href="https://github.com/wu-kan"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg></span> wu-kan</a>、<a href="https://github.com/howardlau1999"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg></span> howardlau1999</a></p>
+<p>本项目经过测试且可用的操作系统为：</p>
+<ul>
+<li>Windows 10</li>
+<li>Debian 11</li>
+<li>Debian 11, Windows Subsystem for Linux (WSL)</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">macOS 无法烧板</p>
+<p>除了 Vivado 之外，所有工具都可以在 macOS 上运行，也即可以顺利完成软件测试以及波形仿真。但由于 <strong>Vivado 无法在 macOS 上安装</strong>，所以如果你使用的是 macOS 并且<strong>需要进行烧板实验</strong>，请通过虚拟机或使用其他设备等方式使用上述的操作系统进行实验。</p>
+</div>
+<p>我们提供两种风格的开发环境配置方案：</p>
+<ol>
+<li>对于喜欢使用 IDE 集成环境的同学，推荐使用 Windows 配置方法。</li>
+<li>对于喜欢使用终端+代码编辑器组合的同学，推荐使用 Linux/WSL 配置方法，或使用我们准备好的 Docker 环境。</li>
+</ol>
+<h2 id="docker-配置方法">Docker 配置方法<a class="headerlink" href="#docker-配置方法" title="Permanent link">&para;</a></h2>
+<p>该方法适用于 Windows、Linux 和 macOS 系统。</p>
+<p>首先到 <a href="https://docs.docker.com/engine/install/#supported-platforms">Docker 官方网站</a> 选择并下载你使用的操作系统所对应的安装包，按照安装指南配置好 Docker。Docker 环境中含有 Scala 开发环境以及 Verilator 仿真器，但不包含 Vivado。如果你不需要烧板，那么使用 Docker 环境就可以完成所有实验以及软件测试了。</p>
+<p>之后，只需要运行</p>
+<div class="highlight"><pre><span></span><code>docker run -it --rm howardlau1999/yatcpu
+sbt <span class="nb">test</span>
+</code></pre></div>
+<p>Docker 会自动下载我们准备好的镜像并运行容器。如果成功执行，你会看到类似这样的输出。</p>
+<div class="highlight"><pre><span></span><code>[success] Total time: 385 s (06:25), completed Dec 15, 2021, 8:45:25 PM
+</code></pre></div>
+<p>Docker 中的 YatCPU 代码可能不是最新版，且容器结束运行之后所有修改都将丢失，如果你需要完成实验，需要先将代码仓库克隆到本机，然后在运行 Docker 容器时挂载本机目录：</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/howardlau1999/yatcpu
+docker run -it --rm -v yatcpu:/root/yatcpu howardlau1999/yatcpu
+</code></pre></div>
+<p>按照这种方法在容器中所做的修改将保存到本机文件夹，反之同理。</p>
+<h2 id="windows-配置方法">Windows 配置方法<a class="headerlink" href="#windows-配置方法" title="Permanent link">&para;</a></h2>
+<h3 id="安装-intellij-idea-和-scala-插件">安装 Intellij IDEA 和 Scala 插件<a class="headerlink" href="#安装-intellij-idea-和-scala-插件" title="Permanent link">&para;</a></h3>
+<p>使用 Intellij IDEA 配置开发环境比较简单，而且也经过了测试，所以，我们推荐在 Windows 上直接使用 Intellij IDEA 来设置开发环境。</p>
+<p>可以先<a href="https://www.jetbrains.com/toolbox-app/">安装 JetBrains Toolbox</a>，然后通过 JetBrains Toolbox 一键安装 Intellij IDEA Community Edition。</p>
+<p>或者<a href="https://www.jetbrains.com/idea/download/#section=windows">到 JetBrains 官方网站下载 Intellij IDEA</a>，下载免费的 Commnunity Edition 即可。</p>
+<p>打开 Intellij IDEA，选择 “Get from VCS”，按照下图填入信息：</p>
+<p><img alt="images/idea_vcs.png" src="../images/idea-vcs.png" /></p>
+<p>其中 URL 填 <code>https://github.com/howardlau1999/yatcpu</code>，Directory 可以填一个你喜欢的路径，要记得自己存在哪，后续命令行要使用到这个路径，之后点击 “Clone”，就会自动下载项目代码仓库并打开了。</p>
+<p><img alt="images/idea-0.png" src="../images/idea-0.png" /></p>
+<p>打开 IDE 后，按快捷键 <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-s">S</kbd></span> 打开设置。</p>
+<p><img alt="images/idea-1.png" src="../images/idea-1.png" /></p>
+<p>选择 Plugins，搜索并安装 Scala 插件。</p>
+<p><img alt="images/idea-2.png" src="../images/idea-2.png" /></p>
+<p>你还可以顺便安装一个中文插件。安装完成后，点击 Restart IDE 重启 IDE。</p>
+<p><img alt="images/idea-3.png" src="../images/idea-3.png" /></p>
+<p>点击图上的设置 JDK，选择下载 JDK。</p>
+<p><img alt="images/idea-4.png" src="../images/idea-4.png" /></p>
+<p>下载。</p>
+<p><img alt="images/idea-5.png" src="../images/idea-5.png" /></p>
+<p>再选择设置 Scala SDK。</p>
+<p><img alt="images/idea-6.png" src="../images/idea-6.png" /></p>
+<p>选择创建。</p>
+<p><img alt="images/idea-7.png" src="../images/idea-7.png" /></p>
+<p>点下载，在跳出来的窗口中选择我们项目使用的 2.12.13 版本。</p>
+<p>回到“添加 Scala 支持”窗口，在“使用库”中选中我们刚才下载的版本，点击确定。最后记得点击“加载 sbt 项目”加载项目配置。</p>
+<p>大功告成！</p>
+<h3 id="安装-vivado">安装 Vivado<a class="headerlink" href="#安装-vivado" title="Permanent link">&para;</a></h3>
+<p>中山大学组成原理实验课使用的 <a href="https://www.stepfpga.com/doc/_media/basys3_ss.pdf">Basys3</a> 实验板型号为 XC7A35T，需要 Xilinx 的工具进行综合实现以及烧板。这里安装 <code>Vivado HL WebPACK</code> 即可，不需要许可或激活许可密钥。</p>
+<p>经过测试且可用的 Vivado 版本为 2020.1。更新或更旧的版本理论上可以使用，但没有经过测试。</p>
+<p>安装包体积较大，<strong>推荐使用带断点续传功能的下载工具如迅雷、Free Download Manager 下载</strong>。</p>
+<p>如果你在<strong>中山大学校园网内</strong>下载 Vivado 2020.1 安装包，可以使用我们提供的镜像：<a href="https://mirrors.matrix.moe/software/Xilinx_Unified_2020.1_0602_1208.tar">点此下载</a>。</p>
+<p>也可以在 Xilinx 的官网下载：<a href="https://china.xilinx.com/support/download/index.html/content/xilinx/zh/downloadNav/vivado-design-tools/archive.html">点击跳转</a>。</p>
+<div class="admonition warning">
+<p class="admonition-title">预留足够的硬盘空间</p>
+<p>Vivado 2020.1 安装包体积较大，约为 36 GB，且后续安装也要使用大量硬盘空间。请预留好<strong>至少 100 GB 的硬盘空间</strong>。</p>
+</div>
+<h3 id="安装-clang-编译器">安装 Clang 编译器<a class="headerlink" href="#安装-clang-编译器" title="Permanent link">&para;</a></h3>
+<p>如果你<strong>没有安装过 Visual Studio</strong>，<a href="https://aka.ms/vs/17/release/vs_BuildTools.exe">点此下载 Visual Studio Build Tools 安装包</a>并运行，在“工作负荷”标签页选择“使用 C++ 的桌面开发”，并在右侧“安装详细信息”中的“可选”列表里，勾选“适用于 Windows 的 C++ Clang 工具”，之后点击安装即可。</p>
+<p><img alt="build-tools-installer" src="../images/vs-build-tools-installer.png" /></p>
+<p>如果<strong>已经安装过 Visual Studio</strong>，在开始菜单中搜索“Visual Studio Installer”，然后点击“修改”，选中“工作负荷”标签页里的“使用 C++ 的桌面开发”，并在右侧“安装详细信息”中的“可选”列表里，勾选“适用于 Windows 的 C++ Clang 工具”，之后点击“安装”即可。</p>
+<p><img alt="vs-installer" src="../images/vs-installer.png" /></p>
+<p><img alt="vs-installer-clang" src="../images/vs-installer-clang.png" /></p>
+<p>安装完成后，在开始菜单中搜索“Developer Command Prompt”，然后运行，应该会弹出一个命令行窗口显示以下信息（以下为已安装 Visual Studio 的样例）：</p>
+<div class="highlight"><pre><span></span><code>**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.0.4
+** Copyright (c) 2021 Microsoft Corporation
+**********************************************************************
+
+C:\Program Files\Microsoft Visual Studio\2022\Community&gt;
+</code></pre></div>
+<p>之后，<code>cd</code> 到你克隆到本地的代码仓库的中的 <code>csrc</code> 文件夹，例如 <code>C:\yatcpu\csrc</code>，如果你的项目文件保存在别的盘符（例如 <code>D:</code>），要先输入 <code>D:</code> 按回车后再执行 <code>cd</code> 命令。然后运行 <code>.\build.bat</code> 脚本：</p>
+<div class="highlight"><pre><span></span><code>C:\Program Files\Microsoft Visual Studio\2022\Community&gt;cd C:\yatcpu\csrc
+C:\yatcpu\csrc&gt;.\build.bat
+</code></pre></div>
+<p>如果正常运行，应该看到以下输出：</p>
+<div class="highlight"><pre><span></span><code>C:\yatcpu\csrc&gt;rmdir /Q /S build
+系统找不到指定的文件。
+
+C:\yatcpu\csrc&gt;cmake -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake -G&quot;NMake Makefiles&quot; -B build .
+-- The C compiler identification is Clang 12.0.0
+-- The CXX compiler identification is Clang 12.0.0
+-- The ASM compiler identification is Clang
+-- Found assembler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/Llvm/x64/bin/clang.exe
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/Llvm/x64/bin/clang.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/Llvm/x64/bin/clang++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/yatcpu/csrc/build
+
+C:\yatcpu\csrc&gt;cmake --build build
+Scanning dependencies of target tetris
+[  6%] Building ASM object CMakeFiles/tetris.dir/init.S.obj
+[ 12%] Building C object CMakeFiles/tetris.dir/tetris.c.obj
+[ 18%] Linking C executable tetris
+[ 18%] Built target tetris
+Scanning dependencies of target hello
+[ 25%] Building ASM object CMakeFiles/hello.dir/init.S.obj
+[ 31%] Building C object CMakeFiles/hello.dir/hello.c.obj
+[ 37%] Linking C executable hello
+[ 37%] Built target hello
+Scanning dependencies of target fibonacci
+[ 43%] Building ASM object CMakeFiles/fibonacci.dir/init.S.obj
+[ 50%] Building C object CMakeFiles/fibonacci.dir/fibonacci.c.obj
+[ 56%] Linking C executable fibonacci
+[ 56%] Built target fibonacci
+Scanning dependencies of target quicksort
+[ 62%] Building ASM object CMakeFiles/quicksort.dir/init.S.obj
+[ 68%] Building C object CMakeFiles/quicksort.dir/quicksort.c.obj
+[ 75%] Linking C executable quicksort
+[ 75%] Built target quicksort
+Scanning dependencies of target mmio
+[ 81%] Building ASM object CMakeFiles/mmio.dir/mmio.S.obj
+[ 87%] Linking ASM executable mmio
+[ 87%] Built target mmio
+Scanning dependencies of target sb
+[ 93%] Building ASM object CMakeFiles/sb.dir/sb.S.obj
+[100%] Linking ASM executable sb
+[100%] Built target sb
+</code></pre></div>
+<h3 id="安装-verilator">安装 Verilator<a class="headerlink" href="#安装-verilator" title="Permanent link">&para;</a></h3>
+<p>Chisel 3 自带的仿真器速度较慢，Verilator 通过将 Verilog 代码编译为 C++ 代码加速仿真。目前，Verilator 仅原生支持 Linux 系统，但我们可以使用 MSYS2 在 Windows 上使用 Verilator。</p>
+<p>首先需要安装 MSYS2，到<a href="https://www.msys2.org/">官方网站下载最新的安装包</a>，运行安装程序。注意<strong>安装路径不能含有中文和空格</strong>，建议直接安装在默认的 <code>C:\msys64</code> 下。安装完成之后，按 <span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-r">R</kbd></span>，输入 <code>cmd</code> 回车，打开命令提示符，运行：</p>
+<div class="highlight"><pre><span></span><code>C:\msys64\usr\bin\bash.exe -l -c ^
+&quot;pacman -Sy --noconfirm --needed ^
+base-devel mingw-w64-x86_64-toolchain ^
+git flex mingw-w64-x86_64-cmake ^
+mingw-w64-x86_64-verilator&quot;
+</code></pre></div>
+<p>该命令将安装 Verilator 以及其依赖。安装完成后，还需要设置系统环境变量，在开始菜单搜索“环境变量”，打开“编辑系统环境变量”，在弹出的对话框点击“环境变量”，双击用户变量中的“Path”，点击“新建”，在<strong>最后</strong>添加两行：</p>
+<ul>
+<li><code>C:\msys64\usr\bin</code></li>
+<li><code>C:\msys64\mingw64\bin</code></li>
+</ul>
+<p><img alt="windows-verilator-path" src="../images/windows-verilator-path.png" /></p>
+<p>之后一路点“确定”关掉所有对话框，并关掉刚刚打开的命令提示符。然后重新打开命令提示符，运行 <code>verilator_bin --version</code>，如果配置正确，应当看到类似的输出：</p>
+<div class="highlight"><pre><span></span><code>C:\&gt;verilator_bin --version
+Verilator 4.218 2022-01-17 rev UNKNOWN.REV
+</code></pre></div>
+<p>之后，运行仿真测试的时候，测试框架将自动寻找 Verilator 并用来加速。</p>
+<h2 id="linuxwsl1-配置方法">Linux/WSL1 配置方法<a class="headerlink" href="#linuxwsl1-配置方法" title="Permanent link">&para;</a></h2>
+<p>下面介绍如何在 Linux 或 WSL(Windows Subsystem for Linux) 环境中搭建本实验的开发环境。<a href="https://liuhaohua.com/server-programming-guide/appendix/build-env/">这里</a>给出搭建相关环境的一个参照。</p>
+<p>这里假设你使用的 Linux 或 WSL 系统是 Debian 11。对于使用其他 Linux 系统的同学，操作是类似的，相信你有足够的能力参考下面的指令搭建环境。</p>
+<h3 id="安装必要工具">安装必要工具<a class="headerlink" href="#安装必要工具" title="Permanent link">&para;</a></h3>
+<p>本实验将会使用到以下工具，除 sbt 外，可以通过下面提供的命令一键安装：</p>
+<div class="highlight"><pre><span></span><code>sudo apt install -y git <span class="se">\</span>
+    clang <span class="se">\</span>
+    make <span class="se">\</span>
+    gnupg <span class="se">\</span>
+    scala <span class="se">\</span>
+    libtinfo5 <span class="se">\</span>
+    coreutils <span class="se">\</span>
+    cmake <span class="se">\</span>
+    llvm <span class="se">\</span>
+    lld 
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>git</td>
+<td>代码版本管理工具</td>
+</tr>
+<tr>
+<td>clang, lld</td>
+<td>用于编译生成 RISC-V 可执行二进制文件</td>
+</tr>
+<tr>
+<td>llvm</td>
+<td>用于编辑和查看二进制文件</td>
+</tr>
+<tr>
+<td>make</td>
+<td>用于执行 Makefile</td>
+</tr>
+<tr>
+<td>cmake</td>
+<td>用于执行 CMakeLists.txt</td>
+</tr>
+<tr>
+<td>gnupg</td>
+<td>签名验证工具</td>
+</tr>
+<tr>
+<td>scala</td>
+<td>本项目的语言编译器</td>
+</tr>
+<tr>
+<td>sbt</td>
+<td>Scala 包管理器</td>
+</tr>
+<tr>
+<td>libtinfo5</td>
+<td>Vivado 启动依赖</td>
+</tr>
+<tr>
+<td>md5sum</td>
+<td>安装包校验工具</td>
+</tr>
+</tbody>
+</table>
+<h3 id="安装-sbt-包管理器">安装 sbt 包管理器<a class="headerlink" href="#安装-sbt-包管理器" title="Permanent link">&para;</a></h3>
+<p><a href="https://packages.debian.org/sid/sbt">sbt</a> 目前仍然在 Debian 的<a href="https://www.debian.org/releases/sid/">不稳定</a>版本中。对于不希望使用 sid 系统的同学，可以按照<a href="https://www.scala-sbt.org/1.x/docs/zh-cn/Installing-sbt-on-Linux.html#Ubuntu%E5%92%8C%E5%85%B6%E4%BB%96%E5%9F%BA%E4%BA%8EDebian%E7%9A%84%E5%8F%91%E8%A1%8C%E7%89%88">文档</a>的指示下载安装。</p>
+<div class="highlight"><pre><span></span><code>curl -fsSL <span class="s2">&quot;https://keyserver.ubuntu.com/pks/lookup?op=get&amp;\</span>
+<span class="s2">search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823&quot;</span> <span class="p">|</span> <span class="se">\</span>
+    sudo gpg --dearmor -o /usr/share/keyrings/scalasbt-archive-keyring.gpg
+<span class="nb">echo</span> <span class="s2">&quot;deb [signed-by=/usr/share/keyrings/scalasbt-archive-keyring.gpg] \</span>
+<span class="s2">  https://repo.scala-sbt.org/scalasbt/debian all main&quot;</span> <span class="p">|</span> sudo tee <span class="se">\</span>
+    /etc/apt/sources.list.d/sbt.list
+<span class="nb">echo</span> <span class="s2">&quot;deb [signed-by=/usr/share/keyrings/scalasbt-archive-keyring.gpg] \</span>
+<span class="s2">  https://repo.scala-sbt.org/scalasbt/debian /&quot;</span> <span class="p">|</span> sudo tee <span class="se">\</span>
+    /etc/apt/sources.list.d/sbt_old.list
+sudo apt update
+sudo apt install sbt
+</code></pre></div>
+<h3 id="安装-vivado_1">安装 Vivado<a class="headerlink" href="#安装-vivado_1" title="Permanent link">&para;</a></h3>
+<p>中山大学组成原理实验课使用的 <a href="https://www.stepfpga.com/doc/_media/basys3_ss.pdf">Basys3</a> 实验板型号为 XC7A35T，需要 Xilinx 的工具进行综合实现以及烧板。这里安装 <code>Vivado HL WebPACK</code> 即可，不需要许可或激活许可密钥。</p>
+<p>经过测试且可用的 Vivado 版本为 2020.1。更新或更旧的版本理论上可以使用，但没有经过测试。</p>
+<p>中山大学校园网内下载 Vivado 2020.1 安装包，可以使用我们提供的镜像。</p>
+<div class="admonition warning">
+<p class="admonition-title">预留足够的硬盘空间</p>
+<p>Vivado 2020.1 安装包体积较大，约为 36 GB，且后续安装也要使用大量硬盘空间。请预留好<strong>至少 100 GB 的硬盘空间</strong>。</p>
+</div>
+<p>下面是使用 <code>curl</code> 下载校园网安装包镜像的命令，你也可以使用其他方式下载。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 下载</span>
+curl -O https://mirrors.matrix.moe/software/Xilinx_Unified_2020.1_0602_1208.tar.gz
+<span class="c1"># 也可以在 Xilinx 的官网下载</span>
+<span class="c1"># https://china.xilinx.com/support/download/index.html/content/xilinx/zh/downloadNav/vivado-design-tools/archive.html</span>
+</code></pre></div>
+<p>由于文件较大，为了校验传输过程中是否发生错误，请在下载完成后验证安装包的 MD5 值。使用以下命令计算文件的 MD5 值：</p>
+<div class="highlight"><pre><span></span><code>md5sum Xilinx_Unified_2020.1_0602_1208.tar.gz
+</code></pre></div>
+<p>命令应当输出以下内容：</p>
+<div class="highlight"><pre><span></span><code>b018f7b331ab0446137756156ff944d9  Xilinx_Unified_2020.1_0602_1208.tar.gz
+</code></pre></div>
+<p>如果不一致，请重新下载。校验通过后，使用下面的命令解压安装包并生成安装配置文件：</p>
+<div class="highlight"><pre><span></span><code>tar -zxf Xilinx_Unified_2020.1_0602_1208.tar.gz
+<span class="nb">cd</span> Xilinx_Unified_2020.1_0602_1208
+./xsetup -b ConfigGen
+</code></pre></div>
+<p>先输入 <code>2</code> 再输入 <code>1</code>，这时会选中 <code>Vivado HL WebPACK</code>。最后会产生一个默认配置文件 <code>~/.Xilinx/install_config.txt</code>。</p>
+<p>随后再次执行下述指令，安装 <code>Vivado HL WebPACK</code>。</p>
+<div class="highlight"><pre><span></span><code>./xsetup -a XilinxEULA,3rdPartyEULA,WebTalkTerms -b Install <span class="se">\</span>
+    -c ~/.Xilinx/install_config.txt -l ~/Xilinx
+</code></pre></div>
+<p>其中 <code>~/Xilinx</code> 是安装目录，可以自行定义。</p>
+<h3 id="测试-clang-编译器">测试 Clang 编译器<a class="headerlink" href="#测试-clang-编译器" title="Permanent link">&para;</a></h3>
+<p><code>cd</code> 到仓库中的 <code>csrc</code> 目录，运行 <code>./build.sh</code> 脚本，一切正常的话应当看到如下输出：</p>
+<div class="highlight"><pre><span></span><code>~/chisel-riscv/csrc$ ./build.sh
+-- The C compiler identification is Clang <span class="m">11</span>.0.1
+-- The CXX compiler identification is Clang <span class="m">11</span>.0.1
+-- The ASM compiler identification is Clang
+-- Found assembler: /usr/bin/clang
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - <span class="k">done</span>
+-- Check <span class="k">for</span> working C compiler: /usr/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - <span class="k">done</span>
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - <span class="k">done</span>
+-- Check <span class="k">for</span> working CXX compiler: /usr/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - <span class="k">done</span>
+-- Configuring <span class="k">done</span>
+-- Generating <span class="k">done</span>
+-- Build files have been written to: /mnt/c/Users/Liuhaohua/Desktop/chisel-riscv/csrc/build
+Scanning dependencies of target prelude
+<span class="o">[</span>  <span class="m">7</span>%<span class="o">]</span> Building ASM object CMakeFiles/prelude.dir/init.S.obj
+<span class="o">[</span> <span class="m">14</span>%<span class="o">]</span> Linking ASM static library libprelude.a
+<span class="o">[</span> <span class="m">14</span>%<span class="o">]</span> Built target prelude
+Scanning dependencies of target fibonacci
+Scanning dependencies of target hello
+Scanning dependencies of target mmio
+Scanning dependencies of target quicksort
+Scanning dependencies of target tetris
+Scanning dependencies of target sb
+<span class="o">[</span> <span class="m">21</span>%<span class="o">]</span> Building ASM object CMakeFiles/mmio.dir/mmio.S.obj
+<span class="o">[</span> <span class="m">57</span>%<span class="o">]</span> Building C object CMakeFiles/quicksort.dir/quicksort.c.obj
+<span class="o">[</span> <span class="m">57</span>%<span class="o">]</span> Building ASM object CMakeFiles/sb.dir/sb.S.obj
+<span class="o">[</span> <span class="m">57</span>%<span class="o">]</span> Building C object CMakeFiles/tetris.dir/tetris.c.obj
+<span class="o">[</span> <span class="m">57</span>%<span class="o">]</span> Building C object CMakeFiles/fibonacci.dir/fibonacci.c.obj
+<span class="o">[</span> <span class="m">57</span>%<span class="o">]</span> Building C object CMakeFiles/hello.dir/hello.c.obj
+<span class="o">[</span> <span class="m">78</span>%<span class="o">]</span> Linking C executable quicksort
+<span class="o">[</span> <span class="m">78</span>%<span class="o">]</span> Linking C executable fibonacci
+<span class="o">[</span> <span class="m">78</span>%<span class="o">]</span> Linking C executable tetris
+<span class="o">[</span><span class="m">100</span>%<span class="o">]</span> Linking ASM executable sb
+<span class="o">[</span><span class="m">100</span>%<span class="o">]</span> Linking C executable hello
+<span class="o">[</span><span class="m">100</span>%<span class="o">]</span> Linking ASM executable mmio
+<span class="o">[</span><span class="m">100</span>%<span class="o">]</span> Built target quicksort
+<span class="o">[</span><span class="m">100</span>%<span class="o">]</span> Built target tetris
+<span class="o">[</span><span class="m">100</span>%<span class="o">]</span> Built target fibonacci
+<span class="o">[</span><span class="m">100</span>%<span class="o">]</span> Built target sb
+<span class="o">[</span><span class="m">100</span>%<span class="o">]</span> Built target mmio
+<span class="o">[</span><span class="m">100</span>%<span class="o">]</span> Built target hello
+</code></pre></div>
+<h3 id="安装-verilator_1">安装 Verilator<a class="headerlink" href="#安装-verilator_1" title="Permanent link">&para;</a></h3>
+<p>Verilator 是一款将 Verilog 代码编译到 C++ 代码以加速模拟过程的软件，目前仅支持在 Linux/macOS 环境下运行。而 Chisel 3 自带的模拟软件较慢，对于后期需要 CPU 运行较大的程序时，测试过程可能会很慢。对于大型的测试，测试程序会在 <code>PATH</code> 目录中寻找 Verilator 以加速测试过程，提高迭代效率。</p>
+<p>可以直接通过 apt 安装：</p>
+<div class="highlight"><pre><span></span><code>sudo apt install verilator
+</code></pre></div>
+<p>或者使用 Verilator 推荐的安装方式，从源码安装：</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> <span class="nv">$HOME</span>
+sudo apt-get install git perl python3 make autoconf g++ <span class="se">\</span>
+    flex bison ccache libgoogle-perftools-dev numactl perl-doc
+git clone --depth <span class="m">1</span> -b stable https://github.com/verilator/verilator
+<span class="nb">cd</span> verilator
+autoconf
+./configure
+make -j <span class="sb">`</span>nproc<span class="sb">`</span>
+sudo make install
+</code></pre></div>
+<details class="tips" open="open">
+<summary>修改安装路径</summary>
+<p>如果不想全局安装，可以在 <code>./configure</code> 后加参数 <code>--prefix=/path/to/install</code>，指定安装路径，且在后续测试时，需要将安装路径添加到 <code>PATH</code> 环境变量，以便测试程序可以找到 Verilator 可执行程序。</p>
+</details>
+<p>命令执行完毕后，可以执行命令 <code>verilator --version</code> 测试安装是否成功。如果安装无误，应当看到如下输出（版本号可能不同）：</p>
+<div class="highlight"><pre><span></span><code>Verilator 4.219 devel rev UNKNOWN.REV (mod)
+</code></pre></div>
+<p>之后，运行仿真测试的时候，测试框架将自动寻找 Verilator 并用来加速。</p>
+<h2 id="macos-配置指南">macOS 配置指南<a class="headerlink" href="#macos-配置指南" title="Permanent link">&para;</a></h2>
+<p>建议使用 Homebrew 包管理器，执行：</p>
+<div class="highlight"><pre><span></span><code>brew install llvm cmake verilator sbt
+</code></pre></div>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-02-25 17:52:39</span>
+      
+    
+  </small>
+</div>
+
+              
+
+  
+    <div class="md-source-date">
+      <small>
+          本页作者: <span class='git-page-authors git-authors'><a href='mailto:howardlau1999@hotmail.com'>Howard Lau</a>, <a href='mailto:i@wu-kan.cn'>wu-kan</a></span>
+      </small>
+    </div>
+  
+
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: 开始之前" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              开始之前
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../test/" class="md-footer__link md-footer__link--next" aria-label="下一页: 快速测试" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              快速测试
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/SYSU-SCC/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/sysuscc" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8aa65030.min.js"></script>
+      
+    
+  </body>
+</html>
